@@ -33,18 +33,11 @@ export default function CreateScreen({ navigation }) {
       content,   
     });
     console.log("Post created!");
+    Alert.alert("Post created!");
     navigation.navigate("Account");
-    Alert.alert(
-      //"Message",
-      //"Post created!",
-      [
-        {
-          text: "Ok",
-          onPress: () => Alert.alert("Post created!"),
-          style: "cancel",
-        },
-      ],
-    );
+    
+    
+          
   }
 
   return (
@@ -68,10 +61,13 @@ export default function CreateScreen({ navigation }) {
           onChangeText={(input) => setContent(input)}
         />
         <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity onPress={create} style={styles.loginButton}>
+          <TouchableOpacity onPress={create} style={styles.createButton}>
             <Text style={styles.buttonText}>Create</Text>
           </TouchableOpacity>
-          <Button title="Cancel" onPress={() => navigation.goBack()} />
+          <TouchableOpacity onPress={() => navigation.goBack()} style={styles.cancelButton}>
+            <Text style={styles.buttonText}>Cancel</Text>
+          </TouchableOpacity>
+          
           
         </View>
         
@@ -104,13 +100,22 @@ const styles = StyleSheet.create({
     fontSize: 18,
     backgroundColor: "white",
   },
-  loginButton: {
+  createButton: {
     backgroundColor: "blue",
     width: 120,
     alignItems: "center",
     padding: 18,
     marginTop: 12,
     marginBottom: 36,
+  },
+  cancelButton: {
+    backgroundColor: "#000055",
+    width: 120,
+    alignItems: "center",
+    padding: 18,
+    marginTop: 12,
+    marginBottom: 36,
+    marginLeft: 12,
   },
   buttonText: {
     color: "white",

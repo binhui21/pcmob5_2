@@ -57,12 +57,16 @@ export default function AccountScreen({ navigation }) {
     navigation.navigate("SignIn");
   }
 
+  function create() {
+    navigation.navigate("Create");
+  }
+
   return (
     
     <View style={commonStyles.container}>
       <Text>Account Screen</Text>
       <Text>{username}</Text>
-      <Button title="Create" onPress={navigation.navigate("Create")} />
+      <Button title="Create" onPress={create} />
       <Button title="Sign out" onPress={signOut} />    
     </View>
   );
