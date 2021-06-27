@@ -50,12 +50,13 @@ export default function SignInScreen({ navigation }) {
       <View style={styles.container}>
         <Text style={styles.title}>Sign in to blog</Text>
         <Text style={styles.fieldTitle}>Username</Text>
-        <TextInput
+        <TextInput 
           style={styles.input}
           autoCapitalize="none"
           autoCorrect={false}
           value={username}
           onChangeText={(input) => setUsername(input)}
+          
         />
         <Text style={styles.fieldTitle}>Password</Text>
         <TextInput

@@ -9,6 +9,7 @@ import {
 import { commonStyles } from "../styles/commonStyles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
+import App from "../App";
 
 const API = "https://binhui.pythonanywhere.com";
 const API_WHOAMI = "/whoami";
@@ -52,8 +53,9 @@ export default function AccountScreen({ navigation }) {
     return removeListener;
   }, []);
 
-  function signOut() {
+  async function signOut() {
     AsyncStorage.removeItem("token");
+    Alert.alert("Logout success!");
     navigation.navigate("SignIn");
   }
 

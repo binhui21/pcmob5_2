@@ -29,18 +29,9 @@ export default function SignUpScreen({ navigation }) {
       password,   
     });
     console.log("Success signing up!");
+    Alert.alert("Account created");
     navigation.navigate("SignIn");
-    Alert.alert(
-      "Message",
-      "Sign up successful!",
-      [
-        {
-          text: "Ok",
-          onPress: () => Alert.alert("Please proceed to log in"),
-          style: "cancel",
-        },
-      ],
-    );
+    
   }
 
   return (
@@ -69,12 +60,9 @@ export default function SignUpScreen({ navigation }) {
           <TouchableOpacity onPress={signup} style={styles.loginButton}>
             <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableOpacity>
-          {loading ? (
-            <ActivityIndicator style={{ marginLeft: 20, marginBottom: 20 }} /> // adjust
-          ) : null}
+          
         </View>
-        <Text style={styles.errorText}>{errorText}</Text>
-        <View style={{ height: 20 }}></View>
+        
       </View>
     </TouchableWithoutFeedback>
   );
