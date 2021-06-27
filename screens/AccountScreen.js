@@ -5,11 +5,11 @@ import {
   StyleSheet,
   Text,
   View,
+  Alert,
 } from "react-native";
 import { commonStyles } from "../styles/commonStyles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
-import App from "../App";
 
 const API = "https://binhui.pythonanywhere.com";
 const API_WHOAMI = "/whoami";
